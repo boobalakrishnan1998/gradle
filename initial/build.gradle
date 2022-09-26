@@ -56,7 +56,7 @@ dependencies {
 	runtimeOnly 'org.aspectj:aspectjrt:1.9.7'
 	implementation 'org.aspectj:aspectjtools:1.9.7'
 	implementation("org.springframework.boot:spring-boot-starter-logging")
-	implementation 'org.springframework:spring-beans:5.3.19'
+	implementation 'org.springframework:spring-beans:5.3.20'
 	implementation 'org.springframework:spring-context:5.3.20'{
 		exclude module: 'spring-expression'
 	}	
@@ -70,14 +70,13 @@ dependencies {
 	implementation 'org.apache.commons:commons-collections4:4.4'
 	implementation 'org.apache.commons:commons-lang3:3.12.0'
 	implementation 'jakarta.validation:jakarta.validation-api:3.0.2'
-	implementation("org.codehaus.jettison:jettison:1.5.0")
+        implementation 'org.codehaus.jettison:jettison:1.5.1'
 	compileOnly("org.projectlombok:lombok:1.18.24")
         implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.6.1'
 	implementation 'org.json:json:20220320'
 	implementation 'org.apache.httpcomponents:httpclient'
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok:1.18.8'
-	implementation 'org.springframework:spring-beans:5.3.19'
 	implementation ("org.springframework.boot:spring-boot-starter-validation:${springBootVersion}")
 	testImplementation ("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
 }
