@@ -72,7 +72,7 @@ dependencies {
 	implementation 'jakarta.validation:jakarta.validation-api:3.0.2'
 	implementation("org.codehaus.jettison:jettison:1.5.0")
 	compileOnly("org.projectlombok:lombok:1.18.24")
-	implementation 'com.netflix.archaius:archaius-core:0.7.7'
+        implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.6.1'
 	implementation 'org.json:json:20220320'
 	implementation 'org.apache.httpcomponents:httpclient'
 	compileOnly 'org.projectlombok:lombok'
