@@ -8,9 +8,9 @@ description = "Available Service "
 
 
 test {
-	    testLogging.showStandardStreams = true
-	    exclude '**/*IntegrationTest.class'
-	    systemProperty 'test.endpoint.host', (rootProject.hostName)
+	testLogging.showStandardStreams = true
+	exclude '**/*IntegrationTest.class'
+	systemProperty 'test.endpoint.host', (rootProject.hostName)
 }
 
 task intTest(type: Test) {
@@ -24,22 +24,22 @@ buildscript {
 		//mavenCentral()
 		maven { url "https://plugins.gradle.org/m2/" }
 
-  	}
+	}
 	dependencies {
-    	classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
 		classpath "io.spring.gradle:dependency-management-plugin:${springGradleDMVersion}"
-	    classpath("org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:3.3")
-  	}
+		classpath("org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:3.3")
+	}
 }
 
 
 repositories {
-        
-     maven { url "https://repo.maven.apache.org/maven2" }
+
+	maven { url "https://repo.maven.apache.org/maven2" }
 }
-	
+
 configurations {
-    compile
+	compile
 	all*.exclude group: 'org.slf4j', module: 'log4j-over-slf4j'
 	all*.exclude group: 'org.apache.logging.log4j', module: 'log4j-slf4j-impl'
 	all*.exclude group: 'log4j', module: 'log4j'
@@ -61,7 +61,7 @@ dependencies {
 	implementation 'org.springframework:spring-beans:5.3.20'
 	implementation 'org.springframework:spring-context:5.3.20'{
 		exclude module: 'spring-expression'
-	}	
+	}
 	implementation("io.dropwizard.metrics:metrics-core:4.2.12")
 	implementation("io.dropwizard.metrics:metrics-graphite:4.2.12")
 	implementation("io.dropwizard.metrics:metrics-jvm:4.2.12")
@@ -72,17 +72,13 @@ dependencies {
 	implementation 'org.apache.commons:commons-collections4:4.4'
 	implementation 'org.apache.commons:commons-lang3:3.12.0'
 	implementation 'jakarta.validation:jakarta.validation-api:3.0.2'
-        implementation 'org.codehaus.jettison:jettison:1.5.1'
+	implementation 'org.codehaus.jettison:jettison:1.5.1'
 	compileOnly("org.projectlombok:lombok:1.18.24")
-        implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.6.1'
+	implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.6.1'
 	implementation 'org.json:json:20220320'
 	implementation 'org.apache.httpcomponents:httpclient'
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok:1.18.8'
 	implementation ("org.springframework.boot:spring-boot-starter-validation:${springBootVersion}")
 	testImplementation ("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
-        implementation('com.netflix.turbine:turbine-web:1.0.0'){
-           exclude group: 'log4j', module: 'log4j'
-           }
 }
-
