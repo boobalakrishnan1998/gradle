@@ -42,6 +42,8 @@ configurations {
     compile
 	all*.exclude group: 'org.slf4j', module: 'log4j-over-slf4j'
 	all*.exclude group: 'org.apache.logging.log4j', module: 'log4j-slf4j-impl'
+	all*.exclude group: 'log4j', module: 'log4j'
+
 }
 
 dependencyManagement {
