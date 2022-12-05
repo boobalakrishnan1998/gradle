@@ -81,14 +81,8 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok:1.18.8'
 	implementation ("org.springframework.boot:spring-boot-starter-validation:${springBootVersion}")
 	testImplementation ("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
-	implementation("com.netflix.turbine:turbine-core:1.0.0"){
-			exclude module: 'log4j'
-           }
-         implementation("com.netflix.turbine:turbine-contrib:1.0.0"){
-			exclude module: 'log4j'
-           }
         implementation("com.netflix.turbine:turbine-web:1.0.0"){
-			exclude module: 'log4j'
+			exclude module: 'log4j','turbine-contrib'
            }
 }
 
